@@ -456,7 +456,121 @@
     transition: border-color .2s;
   }
   a.ext-link:hover { border-color: var(--orange); }
+
+  /* Webinar banner */
+  .webinar-banner {
+    background: linear-gradient(135deg, var(--navy2) 0%, #1c1a35 100%);
+    border: 1px solid rgba(213,112,65,.3);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp .5s ease both;
+    animation-delay: .18s;
+  }
+  .webinar-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--orange), var(--orange2), transparent);
+  }
+  .webinar-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(213,112,65,.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .webinar-left { flex: 1; min-width: 0; }
+  .webinar-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: .6rem;
+  }
+  .webinar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: .35rem;
+  }
+  .webinar-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--orange2);
+    letter-spacing: .08em;
+    margin-bottom: .75rem;
+  }
+  .webinar-desc {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+  .webinar-right {
+    flex-shrink: 0;
+  }
+  .webinar-date-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 14px;
+    background: rgba(213,112,65,.12);
+    border: 1px solid rgba(213,112,65,.3);
+    gap: 0;
+  }
+  .webinar-month {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .15em;
+    color: var(--orange);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .webinar-day {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+  .webinar-dow {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    color: var(--text3);
+    text-transform: uppercase;
+  }
+  @media (max-width: 560px) {
+    .webinar-banner { flex-direction: column; }
+    .webinar-right { align-self: flex-start; }
+  }
 </style>
+
+  <!-- Open Graph / Slack preview -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Under the Surface — Issue 01 · Spring 2026">
+  <meta property="og:description" content="Q1 momentum, Designit partnership kicks off, new events on the radar, and a note from Benny. Kontur's first internal newsletter.">
+  <meta property="og:site_name" content="Kontur · Under the Surface">
+  <meta name="description" content="Q1 momentum, Designit partnership kicks off, new events on the radar, and a note from Benny. Kontur's first internal newsletter.">
+  <!-- Twitter/Slack card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Under the Surface — Issue 01 · Spring 2026">
+  <meta name="twitter:description" content="Q1 momentum, Designit partnership kicks off, new events on the radar, and a note from Benny. Kontur's first internal newsletter.">
 </head>
 <body>
 <div class="page">
@@ -484,15 +598,13 @@
       <div class="benny-body">
         <div class="benny-label">A note from</div>
         <h2>Benny Walløe</h2>
-        <p>Dear Kontur team,&nbsp;&nbsp;</p>
+        <p>Dear Kontur,</p>
         <p>&nbsp;</p>
-        <p>What a strong start to the year – closing Q4 2025 at an all-time high and heading into the end of a solid Q1, both in bookings and momentum. Kontur is clearly entering a new phase.</p>
+        <p>What an exciting start to the year—having closed Q4 2025 at an all-time high, as we now approach the end of a strong Q1, both in bookings and momentum. Kontur is truly moving into a new phase.</p>
         <p>&nbsp;</p>
-<p>We’re investing in people, recruiting across R&D and GTM, and partnering with Designit to sharpen how we communicate our value. This work is already showing results.</p>
+        <p>We're investing in people and are currently recruiting across R&amp;D and GTM, while also partnering strategically with Designit to sharpen how we communicate our value – shifting the narrative from "vehicle-mounted GPR" to the real value we bring and the problems we solve for our customers. This is important work, and we are already seeing results.</p>
         <p>&nbsp;</p>
-        <p>As we head into a well-deserved Easter break, I hope you feel the same energy and direction— we’re on the right track, and the best is ahead.</p>
-        <p>&nbsp;</p>
-<p><h5>Happy Easter,</h5> </p>
+        <p>As we head into a well-deserved Easter break, I hope you feel the same sense of energy and direction: we're on the right track, and the best is ahead of us. Happy Easter,</p>
         <div class="benny-sig">— Benny</div>
       </div>
     </div>
@@ -530,6 +642,24 @@
 
     </div>
 
+    <!-- Webinar banner -->
+    <div class="webinar-banner">
+      <div class="webinar-left">
+        <div class="webinar-eyebrow">📡 &nbsp;Upcoming webinar</div>
+        <h2 class="webinar-title">Field Problems Webinar</h2>
+        <p class="webinar-date">Thursday, 23 April 2026</p>
+        <p class="webinar-desc">Join us for our next webinar where we dive into real-world field challenges — the kind of problems Kontur's subsurface insight is built to solve. A great opportunity to learn, ask questions, and connect with the team. Details and registration link coming soon.</p>
+        <span class="card-tag" style="margin-top:1.25rem;display:inline-block;">WEBINAR</span>
+      </div>
+      <div class="webinar-right">
+        <div class="webinar-date-block">
+          <span class="webinar-month">APR</span>
+          <span class="webinar-day">23</span>
+          <span class="webinar-dow">Thursday</span>
+        </div>
+      </div>
+    </div>
+
     <p class="section-label">On the radar</p>
 
     <div class="radar">
@@ -560,7 +690,7 @@
         <div class="event-date">Apr 29 – 30</div>
         <div class="event-info">
           <h4>NRRA — Minnesota, USA</h4>
-          <p>We'll be joining the <span class="hl">National Road Research Alliance (NRRA)</span>, hosted by MnDOT, who runs the pooled fund studies. A great opportunity to engage with key stakeholders in road research and showcase how Kontur's subsurface insight can support infrastructure decision-making.</p>
+          <p>We'll be joining the <span class="hl">National Road Research Alliance (NRRA)</span>, hosted by MinnDOT, who runs the pooled fund studies. A great opportunity to engage with key stakeholders in road research and showcase how Kontur's subsurface insight can support infrastructure decision-making.</p>
         </div>
       </div>
 
@@ -580,7 +710,7 @@
     <div class="product-pulse">
       <h3>Examiner Software</h3>
       <div><span class="version-badge">ExS 3.9.1 — Coming soon</span></div>
-      <p>The next release of Examiner is just around the corner. ExS 3.9.1 includes a set of updates aimed at improving efficiency and making it easier to work with subsurface data. The release date will be shared shortly&nbsp;— stay tuned.</p>
+      <p>The next release of Examiner is just around the corner. <span class="hl">ExS 3.9.1</span> brings a fresh set of improvements to help you work faster and smarter with your subsurface data. Release notes coming shortly — stay tuned.</p>
     </div>
 
     <div class="divider"></div>
